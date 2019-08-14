@@ -10,6 +10,10 @@ class Course extends Model
     //
     use CourseRelashionships;
     
+    public function getRouteKeyName()
+	{
+	    return 'slug';
+	}
 
     protected $guarded = [];
 

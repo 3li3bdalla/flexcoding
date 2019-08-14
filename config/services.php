@@ -34,4 +34,8 @@ return [
         'secret' => env('SPARKPOST_SECRET'),
     ],
 
+
+    'dropbox'=>[
+        'dropbox_authorization_token'=> env('DROPBOX_AUTHORIZATION_TOKEN','wZIjTJnVzdAAAAAAAAAAVpMME-pnk4j2E8Ws5yV8ObG5CVnxdlYj1jVh4XADf0cE')
+    ]
 ];

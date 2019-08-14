@@ -16,7 +16,10 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+
     <!-- Styles -->
+    <link href="{{ asset('css/instructor.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -49,6 +52,11 @@
                                 </li>
                             @endif
                         @else
+                            <li class="nav-item">
+                                    <a class="button is-medium create_course_button has-text-primary" href="{{ route('instructor.course.create')}}">Upload Course&nbsp;&nbsp;<i class="fab fa-youtube"></i> </a>
+                            </li>
+
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -75,6 +83,8 @@
         <main class="py-4">
             @yield('content')
         </main>
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
     </div>
 </body>
 </html>
