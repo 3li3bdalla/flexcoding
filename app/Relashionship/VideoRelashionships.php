@@ -2,7 +2,7 @@
 namespace App\Relashionships;
 
 
-trait UserRelashionships {
+trait VideoRelashionships {
 	
 
 }

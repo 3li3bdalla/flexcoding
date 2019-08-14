@@ -2,7 +2,8 @@
 namespace App\Relashionships;
 
 
-trait UserRelashionships {
+trait InstructorRelashionships {
+	
 	
 
 }
