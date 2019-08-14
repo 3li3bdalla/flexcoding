@@ -20,6 +20,7 @@ class CreateCoursesTable extends Migration
             $table->string('slug')->unique();
             $table->float('rate')->defualt(0);
             $table->string('image');
+            $table->integer('instructor_id');
             $table->timestamps();
         });
     }

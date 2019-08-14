@@ -15,6 +15,8 @@ class CreateCourseHashtagsTable extends Migration
     {
         Schema::create('course_hashtags', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('course_id');
+            $table->integer('hashtag_id');
             $table->timestamps();
         });
     }
