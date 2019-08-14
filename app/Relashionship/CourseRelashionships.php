@@ -12,9 +12,15 @@ trait CourseRelashionships {
 	}
 
 
-	// public function hastags()
-	// {
-	// 	return $this->belongsToMany(App\Video::class, 'course_id')
-	// }
+	public function hastags()
+	{
+		return $this->belongsToMany(App\Hashtag::class, 'course_hashtags', 'course_id', 'hastag_id');
+	}
+
+	
+	public function instructor()
+	{
+		return $this->belongsTo(App\Instructor::class, 'instructor_id')
+	}
 
 }

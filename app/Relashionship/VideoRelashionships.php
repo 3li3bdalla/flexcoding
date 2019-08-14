@@ -16,6 +16,16 @@ trait VideoRelashionships {
 		return $this->hasMany(App\Comment::class, 'video_id')
 	}
 
+
+
+	public function attachments()
+	{
+		return $this->hasMany(App\Attachment::class, 'video_id')
+	}
+
+
+
+
 }
 
 
