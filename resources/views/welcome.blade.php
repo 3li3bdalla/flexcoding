@@ -76,8 +76,23 @@
                             <a href="{{ route('register') }}">Register</a>
                         @endif
                     @endauth
+
+                     @if (Route::has('instructor.login'))
+
+                        @auth('instructor')
+                        <a href="{{ url('/instructor/home') }}">Home</a>
+                        @else
+                        <a href="{{ route('instructor.login') }}">Instuctor Login</a>
+
+                        
+                    @endauth
+                     @endif
+
                 </div>
             @endif
+
+
+
 
             <div class="content">
                 <div class="title m-b-md">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\InstructorControllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -27,6 +28,15 @@ class LoginController extends Controller
      */
     protected $redirectTo = '/instructor/home';
 
+
+
+    public function showLoginForm()
+    {
+        return view('instructor.auth.login');
+    }
+
+
+
     /**
      * Create a new controller instance.
      *
@@ -38,10 +48,11 @@ class LoginController extends Controller
     }
 
 
-     protected function attemptLogin(Request $request)
+
+
+
+     protected function guard()
     {
-        return $this->guard('instructor')->attempt(
-            $this->credentials($request), $request->filled('remember')
-        );
+        return Auth::guard('instructor');
     }
 }

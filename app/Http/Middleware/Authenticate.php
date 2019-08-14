@@ -18,7 +18,10 @@ class Authenticate extends Middleware
             // if($this->guard()=='instructor')
             //     return route('instructor.login');
 
-            return route('login');
+            // return response();
+           return route('instructor.login');
         }
     }
+
+
 }
