@@ -6,7 +6,7 @@ trait InstructorRelashionships {
 	
 	public function courses()
 	{
-		return $this->hasMany(App\Course::class, 'instructor_id')
+		return $this->hasMany(App\Course::class, 'instructor_id');
 	}
 	
 

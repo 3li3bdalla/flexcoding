@@ -41,6 +41,7 @@ return [
             'provider' => 'users',
         ],
 
+
         'instructor' => [
             'driver' => 'session',
             'provider' => 'instructors',

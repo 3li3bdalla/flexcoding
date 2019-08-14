@@ -8,7 +8,7 @@ trait CourseRelashionships {
 
 	public function videos()
 	{
-		return $this->hasMany(App\Video::class, 'course_id')
+		return $this->hasMany(App\Video::class, 'course_id');
 	}
 
 
@@ -20,7 +20,7 @@ trait CourseRelashionships {
 	
 	public function instructor()
 	{
-		return $this->belongsTo(App\Instructor::class, 'instructor_id')
+		return $this->belongsTo(App\Instructor::class, 'instructor_id');
 	}
 
 }
