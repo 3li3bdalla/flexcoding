@@ -8,7 +8,7 @@ trait HashtagRelashionships {
 	
 	public function courses()
 	{
-		return $this->belongsToMany(App\Course::class, 'course_hashtags', 'hastag_id', 'course_id');
+		return $this->belongsToMany(App\Course::class, 'course_hashtags', 'hashtag_id', 'course_id')->withTimestamps();;
 	}
 
 

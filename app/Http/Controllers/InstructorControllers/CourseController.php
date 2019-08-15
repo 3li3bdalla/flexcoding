@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\InstructorControllers;
 
 use App\Course;
+use App\Hashtag;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Instructor\CreateCourseForm;
@@ -20,7 +21,7 @@ class CourseController extends Controller
     public function index()
     {
 
-        $courses =  Course::paginate(15);
+        $courses =  Course::simplePaginate(10);
 
         return view('instructor.course.index',compact('courses'));
         //
@@ -33,7 +34,8 @@ class CourseController extends Controller
      */
     public function create()
     {
-        return view('instructor.course.create');
+        $hashtags = Hashtag::all();
+        return view('instructor.course.create',compact('hashtags'));
     }
 
     /**
@@ -45,10 +47,10 @@ class CourseController extends Controller
     public function store(CreateCourseForm $request)
     {
 
+
+
         if($request->save())
             return redirect(route('instructor.course.upload_videos',$request->slug));
-        
-
         
         return back();
     }

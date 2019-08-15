@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use \App\HashTag;           
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -11,6 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+    	factory(HashTag::class,10)->create();
         // $this->call(UsersTableSeeder::class);
     }
 }

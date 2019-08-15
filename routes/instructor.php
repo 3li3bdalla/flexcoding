@@ -11,13 +11,18 @@ Route::middleware('auth:instructor')->group(function(){
 		'course'=>'CourseController'
 	]);
 
-	Route::prefix('course')->name('course.')->middleware('auth:instructor')->group(function(){
-
+	Route::prefix('course')->name('course.')->
+		group(function(){
 		Route::get('upload/videos/{course}', 'CourseController@upload_videos')->name('upload_videos');
 	});
-	// reset of course routes
-	
 
+
+
+	// video routes	
+	Route::prefix('video')->name('video.')->group(function(){
+
+		Route::get('/{course}', 'VideoController@index')->name('index');
+	});
 
 
 });

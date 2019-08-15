@@ -17,10 +17,11 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/instructor.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- Styles -->
+
+    <link href="{{ asset('css/instructor.css') }}" rel="stylesheet">
+    
 </head>
 <body>
     <div id="app">
@@ -91,6 +92,14 @@
             @yield('content')
         </main>
         <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+       
+        <script 
+          src="https://code.jquery.com/jquery-3.4.1.min.js"
+          integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+          crossorigin="anonymous"></script>
+
+        <script src="{{ asset('js/instructor.js') }}"></script>
+
 
     </div>
 </body>

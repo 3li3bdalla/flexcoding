@@ -52,17 +52,29 @@
                   @enderror
                 </div>
 
-
                 <div class="field">
-                    <label class="label">Tags</label>
-                    <div class="control">
-                      <input class="input @error('tags') is-danger @enderror" name="tags" type="text" placeholder="something like : php , web development .. act" value='{{old('tags')}}'>
-                      @error('tags') 
-                        <p class="help is-danger">{{$message}}</p>
-                      @enderror
+                  <label class="label">Tags</label>
+                  <div class="control">
+                    <div class="select is-multiple is-fullwidth">
+                      <select name="hashtags[]" class="input @error('hashtags') is-danger @enderror hastag_list"  name="hashtags[]" multiple="multiple">
+                        @foreach($hashtags as $hashtag)
+                        <option 
+                        @if(!empty(old('hashtags')))
+                        @if(in_array($hashtag->id,old('hashtags'))) selected @endif
+                        @endif
+                        value="{{  $hashtag->id }}" icon="iw-crane">{{  $hashtag->name }}</option>
+                        @endforeach
+                      </select>
                     </div>
-
+                    
                   </div>
+
+                  @error('hashtags') 
+                        <p class="help is-danger">{{$message}}</p>
+                  @enderror
+                </div>
+
+
 
                 <div class="columns">
                     
