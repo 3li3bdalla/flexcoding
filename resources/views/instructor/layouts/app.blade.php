@@ -91,7 +91,11 @@
         <main class="py-4">
             @yield('content')
         </main>
-        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+       
+
+
+    </div>
+     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
        
         <script 
           src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -99,8 +103,5 @@
           crossorigin="anonymous"></script>
 
         <script src="{{ asset('js/instructor.js') }}"></script>
-
-
-    </div>
 </body>
 </html>

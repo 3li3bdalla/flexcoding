@@ -31,26 +31,19 @@
                   <div class="card">
                     <div class="card-image">
                       <figure class="image  is-3by2">
-                        <img src="{{ \Storage::url($course->image) }}" alt="Placeholder image" class="">
+                        <img src="{{ \Storage::url($video->url) }}" alt="Placeholder image" class="">
                       </figure>
                     </div>
                     <div class="card-content">
-                      <h5 class=" has-text-primary is-line">shdaljsdlkfjsd</h5>
+                      <h5 class=" has-text-primary is-line">{{ $video->title }}</h5>
                       <!-- <div class="content">
                         {{$course->description}}
                         <a href="#">#css</a> <a href="#">#responsive</a>
                         <br>-->
-                        <time datetime="2016-1-1">435345</time>
+                        <time datetime="2016-1-1">{{ $video->created_date }}</time>
                       <!-- </div>  -->
                     </div>
-                    <div class="card-footer justify-content-center">
-                      <a href="" class="button is-primary"><i class='fa fa-door-open'></i>&nbsp;  open</a>
-                      &nbsp;&nbsp;
-                      <button class="button is-dark"><i class='fa fa-eye-dropper'></i>&nbsp;  edit</button>
-                      &nbsp;&nbsp;
-                      <a href="" class="button is-link"><i class='fa fa-video'></i>&nbsp;  videos 
-                  </a>
-                    </div>
+                    
                   </div>
 
               </div>

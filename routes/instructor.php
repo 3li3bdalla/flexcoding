@@ -22,6 +22,7 @@ Route::middleware('auth:instructor')->group(function(){
 	Route::prefix('video')->name('video.')->group(function(){
 
 		Route::get('/{course}', 'VideoController@index')->name('index');
+		Route::post('/{course}', 'VideoController@store')->name('store');
 	});
 
 

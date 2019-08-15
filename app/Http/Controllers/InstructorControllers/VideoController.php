@@ -6,6 +6,8 @@ use App\Video;
 use App\Course;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Instructor\UploadVideoAjaxForm;
+
 
 class VideoController extends Controller
 {
@@ -36,9 +38,22 @@ class VideoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UploadVideoAjaxForm $request,Course $course)
     {
         //
+      
+
+
+        $video_name =   $request->upload($course->slug);
+
+        return $course->videos()->create(
+            [
+                'title' => $request->title,
+                'description' => $request->description,
+                'slug' => str_slug($request->title),
+                'url' =>  $video_name,
+            ]
+        );
     }
 
     /**

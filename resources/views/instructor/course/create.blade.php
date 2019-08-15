@@ -6,7 +6,7 @@
     @csrf
     <div class="row justify-content-center">
         <div class="col-md-7">
-
+          
             <div class="box">
                 <h1 class="title has-text-primary">Publish New course</h1>
               <div class="field">

@@ -2,8 +2,6 @@
 
 @section('content')
 <div class="container">
-    <form method="post" action="{{ route('instructor.course.store')}}" enctype="multipart/form-data">
-    @csrf
     <div class="row justify-content-center">
         <div class="col-md-9">
 
@@ -12,9 +10,9 @@
              
               
             </div>
+            <upload-vidoe-component   uploading-url="{{ route('instructor.video.store',$course->slug)}}"></upload-vidoe-component>
 
         </div>
     </div>
-    </form>
 </div>
 @endsection
