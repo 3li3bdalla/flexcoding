@@ -1,3 +1,9 @@
 .create_course_button:hover {
 	text-decoration: none;
 }
+
+.app-bar-option-button{
+	line-height: 1.4em;
+	vertical-align: middle;
+	text-align: center;
+}

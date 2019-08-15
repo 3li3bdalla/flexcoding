@@ -11,10 +11,7 @@ use App\Http\Requests\Instructor\CreateCourseForm;
 class CourseController extends Controller
 {
 
-    function __construct()
-    {
-        // $this->middleware('auth:instructor');
-    }
+   
     /**
      * Display a listing of the resource.
      *
@@ -22,6 +19,10 @@ class CourseController extends Controller
      */
     public function index()
     {
+
+        $courses =  Course::paginate(15);
+
+        return view('instructor.course.index',compact('courses'));
         //
     }
 
@@ -105,7 +106,6 @@ class CourseController extends Controller
      */
     public function upload_videos(Course $course)
     {
-
         return view('instructor.course.upload_videos',compact('course'));
         
     }

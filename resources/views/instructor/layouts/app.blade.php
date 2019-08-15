@@ -26,7 +26,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="is-primary  button is-medium" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -55,11 +55,17 @@
                             <li class="nav-item">
                                     <a class="button is-medium create_course_button has-text-primary" href="{{ route('instructor.course.create')}}">Upload Course&nbsp;&nbsp;<i class="fab fa-youtube"></i> </a>
                             </li>
+                            &nbsp;
+                            &nbsp;
+                            <li class="nav-item">
+                                    <a class="button is-medium create_course_button has-text-info" href="{{ route('instructor.course.index')}}">My Courses&nbsp;&nbsp;<i class="fa fa-list"></i> </a>
+                            </li>
 
-
+                            &nbsp;
+                            &nbsp;
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                <a id="navbarDropdown" class="nav-link  button is-medium is-primary has-text-primary app-bar-option-button is-outlined" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <i class="fa fa-bars"></i>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -68,6 +74,7 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+
 
                                     <form id="logout-form" action="{{ route('instructor.logout') }}" method="POST" style="display: none;">
                                         @csrf
