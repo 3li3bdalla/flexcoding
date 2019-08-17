@@ -16,12 +16,14 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
     <!-- Styles -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css" />
 
     <link href="{{ asset('css/instructor.css') }}" rel="stylesheet">
-    
+    @yield('page_css')
 </head>
 <body>
     <div id="app">
@@ -101,7 +103,8 @@
           src="https://code.jquery.com/jquery-3.4.1.min.js"
           integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
           crossorigin="anonymous"></script>
-
+        <script src="https://cdn.plyr.io/3.5.6/plyr.polyfilled.js"></script>
         <script src="{{ asset('js/instructor.js') }}"></script>
+        @yield('page_js')
 </body>
 </html>

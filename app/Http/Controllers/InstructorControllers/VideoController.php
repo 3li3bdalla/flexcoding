@@ -40,12 +40,7 @@ class VideoController extends Controller
      */
     public function store(UploadVideoAjaxForm $request,Course $course)
     {
-        //
-      
-
-
         $video_name =   $request->upload($course->slug);
-
         return $course->videos()->create(
             [
                 'title' => $request->title,
@@ -65,6 +60,7 @@ class VideoController extends Controller
     public function show(Video $video)
     {
         //
+        return view('instructor.video.show',compact('video'));
     }
 
     /**
