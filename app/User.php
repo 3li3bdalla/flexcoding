@@ -39,4 +39,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function  isAuthorizeToDo($action){
+        // collection -  contains
+        return $this->rules()->contians($action) || $this->is_supervisor;
+        /// create_user
+    }
 }

@@ -16,7 +16,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    
+
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
     <!-- Styles -->
@@ -68,7 +68,7 @@
                             &nbsp;
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link  button is-medium is-primary has-text-primary app-bar-option-button is-outlined" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <i class="fa fa-bars"></i>
+                                    {{ Auth::user()->name }} &nbsp; <i class="fa fa-profile"></i>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -93,13 +93,13 @@
         <main class="py-4">
             @yield('content')
         </main>
-       
+
 
 
     </div>
      <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-       
-        <script 
+
+        <script
           src="https://code.jquery.com/jquery-3.4.1.min.js"
           integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
           crossorigin="anonymous"></script>

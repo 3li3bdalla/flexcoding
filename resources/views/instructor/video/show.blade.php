@@ -7,9 +7,13 @@
     <div class="column is-three-quarters">
       <div class="card">
           <div class='card-header'>
-            <video src="{{ $video->player_url }}" type="video/mp4" class='video-js' controls preload='auto' width="100%">
-              <source  width="100%" src="{{ $video->player_url }}" type="video/mp4">
-            </video>    
+            <video poster="https://bulma.io/images/css-book/css-in-44-minutes-book-cover@2x.png"   controls download='false'>
+                <source src="{{ $video->player_url }}" type="video/mp4" />
+
+              
+            </video>
+
+
           </div>
           <div class="card-body">
             <h1 class="title">{{ $video->title }}</h1>
@@ -58,8 +62,18 @@
 </div>
 @endsection
 
+@section('page_css')
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css" />
+@stop
 
+@section('page_js')
+<script src="https://cdn.plyr.io/3.5.6/plyr.js"></script>
 
+<script>
+    var player = new Plyr('#player');
+    player.play();
+</script>
+@stop
 
 
 
