@@ -2,10 +2,10 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\HashTag;
+use \App\Hashtag;
 use Faker\Generator as Faker;
 
-$factory->define(HashTag::class, function (Faker $faker) {
+$factory->define(Hashtag::class, function (Faker $faker) {
     return [
         //
         'name'=>$faker->name

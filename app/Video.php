@@ -8,13 +8,13 @@ use App\Attributes\VideoAttributes;
 
 class Video extends Model
 {
-    
     use VideoAttributes;
 
     use VideoRelashionships;
 
     protected $guarded = [];
-
-
-
+    public function path()
+    {
+        return "instructor/video/{$this->id}";
+    }
 }

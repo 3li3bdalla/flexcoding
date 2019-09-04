@@ -1,13 +1,12 @@
 <?php
 namespace App\Relashionships;
 
+use App\Course;
 
-trait InstructorRelashionships {
-	
-	public function courses()
-	{
-		return $this->hasMany(\App\Course::class, 'instructor_id');
-	}
-	
-
+trait InstructorRelashionships
+{
+    public function courses()
+    {
+        return $this->hasMany(Course::class, 'instructor_id');
+    }
 }
