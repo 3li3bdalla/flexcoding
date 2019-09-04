@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'LandingController@index');
+Route::patch('instructor/course/{course}/edit', 'CourseController@update');
 
 Auth::routes();
 

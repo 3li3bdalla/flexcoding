@@ -7,6 +7,7 @@
     <div class="column is-three-quarters">
       <div class="card">
           <div class='card-header'>
+<<<<<<< HEAD
             <video poster="https://bulma.io/images/css-book/css-in-44-minutes-book-cover@2x.png"   controls download='false'>
                 <source src="{{ $video->player_url }}" type="video/mp4" />
 
@@ -14,6 +15,11 @@
             </video>
 
 
+=======
+            <video src="{{ $video->player_url }}" type="video/mp4" class='video-js' controls preload='auto' width="100%">
+              <source  width="100%" src="{{ $video->player_url }}" type="video/mp4">
+            </video>
+>>>>>>> 8a63d57257f298a325e29a5212a139c012afab84
           </div>
           <div class="card-body">
             <h1 class="title">{{ $video->title }}</h1>
@@ -24,8 +30,9 @@
             @empty(!$video->course->hashtags)
               @foreach($video->course->hashtags as $hashtag)
                 <a href="" class="tag is-primary">{{$hashtag->name}}</a>&nbsp;
-              @endforeach  
+              @endforeach
             @endempty
+
           </div>
         </div>
     </div>
@@ -36,22 +43,22 @@
       <p class="subtitle has-text-primary">
        <strong>Course</strong> : {{ $video->course->title }}
       </p>
-      
+
       <ul class="list-group">
         @foreach($video->course->videos as $list_video)
-          @if($video->id!=$list_video->id) 
+          @if($video->id!=$list_video->id)
             <li class="list-group-item"><a href="{{route('instructor.video.show',$list_video->id)}}">#{{ $loop->index + 1 }}- {{ $list_video->title }}</a></li>
           @else
             <li class="list-group-item active">#{{ $loop->index + 1 }}- {{ $video->title }}</li>
-          @endif 
-          
+          @endif
+
 
         @endforeach
-        
-      </ul>
-    
 
-    </div>   
+      </ul>
+
+
+    </div>
 
 
 

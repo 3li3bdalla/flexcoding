@@ -11,23 +11,25 @@ class Course extends Model
 {
     //
     use CourseRelashionships,CourseAttributes;
-    
+
 
     protected static function boot()
     {
         parent::boot();
-        if(auth('instructor')->check()){
-        	static::addGlobalScope(new CourseScope);	
+        if (auth('instructor')->check()) {
+            static::addGlobalScope(new CourseScope);
         }
-        
     }
 
 
     public function getRouteKeyName()
-	{
-	    return 'slug';
-	}
+    {
+        return 'slug';
+    }
+    public function path()
+    {
+        return "instructor/course/{$this->slug}";
+    }
 
     protected $guarded = [];
-
 }

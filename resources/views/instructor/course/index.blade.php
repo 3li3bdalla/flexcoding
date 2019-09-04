@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container justify-content-center">
-  
+
     <div class="row justify-content-center">
         <div class="col-md-12" >
             @foreach($courses->chunk(3) as $chunked_courses)
@@ -27,7 +27,7 @@
                     <div class="card-footer justify-content-center">
                       <a href="{{ $course->instructor_view_url }}" class="button is-primary"><i class='fa fa-door-open'></i>&nbsp;  open</a>
                       &nbsp;&nbsp;
-                      <button class="button is-dark"><i class='fa fa-eye-dropper'></i>&nbsp;  edit</button>
+                      <a href="/instructor/course/{{$course->slug}}/edit"class="button is-dark"><i class='fa fa-eye-dropper'></i>&nbsp;  Edit</a>
                       &nbsp;&nbsp;
                       <a href="{{ $course->instructor_videos_url }}" class="button is-link"><i class='fa fa-video'></i>&nbsp;  videos ({{ $course->videos()->count()}})</a>
                     </div>
