@@ -47,8 +47,6 @@ class CourseController extends Controller
     public function store(CreateCourseForm $request)
     {
 
-
-
         if($request->save())
             return redirect(route('instructor.course.upload_videos',$request->slug));
         
